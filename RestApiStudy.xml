@@ -1,0 +1,194 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RestApiStudy</name>
+    </assembly>
+    <members>
+        <member name="T:RestApiStudy.Controllers.PersonController">
+            <summary>
+            PersonController
+            </summary>
+        </member>
+        <member name="M:RestApiStudy.Controllers.PersonController.#ctor(RestApiStudy.Repositories.IPersonRepository)">
+            <summary>
+            PersonController ctor
+            </summary>
+            <param name="personRepository"></param>
+        </member>
+        <member name="M:RestApiStudy.Controllers.PersonController.GetPeople">
+            <summary>
+            Returns the people
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RestApiStudy.Controllers.PersonController.GetPerson(System.String)">
+            <summary>
+            Returns person given id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RestApiStudy.Controllers.PersonController.AddPerson(RestApiStudy.Models.Person)">
+            <summary>
+            Service used to add person
+            </summary>
+            <remarks>
+            Request Example:
+            {
+                "Id": "",
+                "Name": "NURBANU",
+                "Surname": "YEŞİLTAŞ",
+                "Gender": "K",
+                "Email": "nurbanu.yesiltas.55@gmail.com",
+                "Phone": "05555555555"
+            }
+            </remarks>
+            <param name="person"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RestApiStudy.Controllers.WeatherForecastController.GetNurbanu">
+            <summary>
+            WeatherForecastController     
+            </summary>
+            <remark>
+            deneme
+            </remark>
+        </member>
+        <member name="T:RestApiStudy.Models.IPersonDatabaseSettings">
+            <summary>
+            IPersonDatabaseSettings
+            </summary>
+        </member>
+        <member name="P:RestApiStudy.Models.IPersonDatabaseSettings.CollectionName">
+            <summary>
+            CollectionName
+            </summary>
+        </member>
+        <member name="P:RestApiStudy.Models.IPersonDatabaseSettings.ConnectionString">
+            <summary>
+            ConnectionString
+            </summary>
+        </member>
+        <member name="P:RestApiStudy.Models.IPersonDatabaseSettings.DatabaseName">
+            <summary>
+            DatabaseName
+            </summary>
+        </member>
+        <member name="T:RestApiStudy.Models.Person">
+            <summary>
+            Person class
+            </summary>
+        </member>
+        <member name="P:RestApiStudy.Models.Person.Id">
+            <summary>
+            id
+            </summary>
+        </member>
+        <member name="P:RestApiStudy.Models.Person.Name">
+            <summary>
+            name
+            </summary>
+        </member>
+        <member name="P:RestApiStudy.Models.Person.Surname">
+            <summary>
+            surname
+            </summary>
+        </member>
+        <member name="P:RestApiStudy.Models.Person.Gender">
+            <summary>
+            gender
+            </summary>
+        </member>
+        <member name="P:RestApiStudy.Models.Person.Email">
+            <summary>
+            email
+            </summary>
+        </member>
+        <member name="P:RestApiStudy.Models.Person.Phone">
+            <summary>
+            phone
+            </summary>
+        </member>
+        <member name="T:RestApiStudy.Models.PersonDatabaseSettings">
+            <summary>
+            PersonDatabaseSettings
+            </summary>
+        </member>
+        <member name="P:RestApiStudy.Models.PersonDatabaseSettings.CollectionName">
+            <summary>
+            CollectionName
+            </summary>
+        </member>
+        <member name="P:RestApiStudy.Models.PersonDatabaseSettings.ConnectionString">
+            <summary>
+            ConnectionString
+            </summary>
+        </member>
+        <member name="P:RestApiStudy.Models.PersonDatabaseSettings.DatabaseName">
+            <summary>
+            DatabaseName
+            </summary>
+        </member>
+        <member name="T:RestApiStudy.Repositories.IPersonRepository">
+            <summary>
+            IPersonRepository
+            </summary>
+        </member>
+        <member name="M:RestApiStudy.Repositories.IPersonRepository.GetPeople">
+            <summary>
+            Returns people data
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RestApiStudy.Repositories.IPersonRepository.GetPerson(System.String)">
+            <summary>
+             Brings the person given tc
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RestApiStudy.Repositories.IPersonRepository.AddPerson(RestApiStudy.Models.Person)">
+            <summary>
+            Add person
+            </summary>
+            <param name="person"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RestApiStudy.Repositories.PersonRepository">
+            <summary>
+            PersonRepository
+            </summary>
+        </member>
+        <member name="M:RestApiStudy.Repositories.PersonRepository.#ctor(RestApiStudy.Models.IPersonDatabaseSettings)">
+            <summary>
+            PersonRepository ctor
+            </summary>
+        </member>
+        <member name="M:RestApiStudy.Repositories.PersonRepository.GetPeople">
+            <summary>
+            Returns people data
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RestApiStudy.Repositories.PersonRepository.GetPerson(System.String)">
+            <summary>
+            GetPerson
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RestApiStudy.Repositories.PersonRepository.AddPerson(RestApiStudy.Models.Person)">
+            <summary>
+            Add Person
+            </summary>
+            <param name="person"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RestApiStudy.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            This method gets called by the runtime. Use this method to add services to the container.
+        </member>
+        <member name="M:RestApiStudy.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        </member>
+    </members>
+</doc>
