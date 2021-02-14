@@ -1,4 +1,5 @@
-﻿using RestApiStudy.Models;
+﻿using MongoDB.Driver;
+using RestApiStudy.Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -25,7 +26,7 @@ namespace RestApiStudy.Repositories
         /// </summary>
         /// <param name="person"></param>
         /// <returns></returns>
-        Task<bool> AddPerson(Person person);
+        Task AddPerson(Person person);
 
     }
 }

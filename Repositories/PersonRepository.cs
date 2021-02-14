@@ -30,7 +30,7 @@ namespace RestApiStudy.Repositories
         {
             try
             {
-                return await Task.FromResult(_person.Find(p => true).ToList()).ConfigureAwait(false);
+                return (await _person.FindAsync(p => true).ConfigureAwait(false)).ToList();
             }
             catch (System.Exception)
             {
@@ -38,7 +38,7 @@ namespace RestApiStudy.Repositories
             }
         }
         /// <summary>
-        /// GetPerson
+        /// Gives all data of the person given id
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
@@ -46,7 +46,10 @@ namespace RestApiStudy.Repositories
         {
             try
             {
-                return await Task.FromResult(_person.Find<Person>(p => p.Id == id).FirstOrDefault()).ConfigureAwait(false);
+                var person = await _person.FindAsync<Person>(p => p.Id == id).Result
+                                         .FirstOrDefaultAsync()
+                                         .ConfigureAwait(false);
+                return person;
             }
             catch (System.Exception)
             {
@@ -59,17 +62,16 @@ namespace RestApiStudy.Repositories
         /// </summary>
         /// <param name="person"></param>
         /// <returns></returns>
-        public async Task<bool> AddPerson(Person person)
+        public async Task AddPerson(Person person)
         {
             try
             {
                 person.Id = string.Empty;
-                _person.InsertOne(person);
-                return await Task.FromResult(true).ConfigureAwait(false);
+                await _person.InsertOneAsync(person).ConfigureAwait(false);
             }
             catch (System.Exception)
             {
-                return await Task.FromResult(false).ConfigureAwait(false);
+                
             }
 
         }
