@@ -30,7 +30,8 @@ namespace RestApiStudy.Repositories
         {
             try
             {
-                return (await _person.FindAsync(p => true).ConfigureAwait(false)).ToList();
+                var list = (await _person.FindAsync(p => true)).ToListAsync();
+                return (await list.ConfigureAwait(false));
             }
             catch (System.Exception)
             {
@@ -46,16 +47,14 @@ namespace RestApiStudy.Repositories
         {
             try
             {
-                var person = await _person.FindAsync<Person>(p => p.Id == id).Result
-                                         .FirstOrDefaultAsync()
-                                         .ConfigureAwait(false);
-                return person;
+                var person = (await _person.FindAsync<Person>(p => p.Id == id))
+                                         .FirstOrDefaultAsync();
+                return await person.ConfigureAwait(false);
             }
             catch (System.Exception)
             {
                 return null;
             }
-
         }
         /// <summary>
         /// Add Person
@@ -69,7 +68,7 @@ namespace RestApiStudy.Repositories
                 person.Id = string.Empty;
                 await _person.InsertOneAsync(person).ConfigureAwait(false);
             }
-            catch (System.Exception)
+            catch (System.Exception ex)
             {
                 
             }
